@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Panelprincipal.css') }}">
+    <link rel="icon" href="/static/img/cbumlogoNike.png" type="image/x-icon">
+</head>
+<body>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <img src="/static/img/cbumlogoNike.png" alt="Logo" class="logo-img">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/planesInicio" target="_blank">Planes</a></li>
+            {% if usuario %}
+            <li><a href="https://t.me/BumRawBot" target="_blank">ChatBot</a></li>
+            {% else %}
+            <li><a href="{{ url_for('inicio_sesion') }}" target="_blank">ChatBot</a></li>
+            {% endif %}
+            {% if session.get('es_admin') %}
+            <li><a href="{{ url_for('reporte') }}" target="_blank">Reporte</a></li>
+            {% endif %}
+        </ul>
+        
+        
+        <!-- Botón Cuenta -->
+        <button class="button">
+            <span class="span">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 23 21" height="21" width="23" class="svg-icon">
+                    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2" stroke="black"
+                        d="M1.97742 19.7776C4.45061 17.1544 7.80838 15.5423 11.5068 15.5423C15.2053 15.5423 18.5631 17.1544 21.0362 19.7776M16.2715 
+                            6.54229C16.2715 9.17377 14.1383 11.307 11.5068 11.307C8.87535 11.307 6.74212 9.17377 6.74212 6.54229C6.74212 3.91082 8.87535 
+                            1.77759 11.5068 1.77759C14.1383 1.77759 16.2715 3.91082 16.2715 6.54229Z">
+                    </path>
+                </svg>
+            </span>
+            <span class="lable">
+                {% if usuario %}
+                    {{ usuario }}
+                {% else %}
+                    Cuenta
+                {% endif %}
+            </span>
+        </button>
+
+        <!-- Botón Logout -->
+        {% if usuario %}
+        <a href="{{ url_for('cerrar_sesion') }}">
+            <button class="Btn">
+                <div class="sign">
+                    <svg viewBox="0 0 512 512">
+                        <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                    </svg>
+                </div>
+                <div class="text">Logout</div>
+            </button>
+        </a>
+        {% endif %}
+    </nav>
+</header>
+
+
+    <!-- Sección principal -->
+    <main class="hero">
+        <h1>Obtén acceso gratuito a<br>mi plan de entrenamiento</h1>
+        <p>Solicita los recursos del plan de tu gusto a nuestro chatbot y <br>Recibe un Plan Personalizado, Lista de Compras con Recetas, Técnica de Ejercicios y demás. </p>
+
+                <!-- Botón Entrar -->
+                {% if usuario %}
+                <!-- Si el usuario ha iniciado sesión, redirige a la página planesInicio -->
+                <a href="{{ url_for('planes_inicio') }}" target="_blank">
+                    <button class="btn-17">
+                        <span class="text-container">
+                            <span class="textEntrar">ENTRAR</span>
+                        </span>
+                    </button>
+                </a>
+            {% else %}
+                <!-- Si el usuario no ha iniciado sesión, redirige a la página de inicio de sesión -->
+                <a href="{{ url_for('inicio_sesion') }}" target="_blank">
+                    <button class="btn-17">
+                        <span class="text-container">
+                            <span class="textEntrar">INGRESAR</span>
+                        </span>
+                    </button>
+                </a>                
+            {% endif %}
+                
+
+    </main>
+    <script>
+        // Comprueba si el usuario ha iniciado sesión cada 5 segundos y actualiza la página si es necesario
+        setInterval(() => {
+            fetch('{{ url_for("pagina_principal") }}')
+                .then(response => response.text())
+                .then(html => {
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+                    const usuarioElemento = tempDiv.querySelector('.lable').textContent.trim();
+                    const actualUsuario = document.querySelector('.lable').textContent.trim();
+    
+                    if (usuarioElemento !== actualUsuario) {
+                        location.reload(); // Recarga la página si el usuario ha cambiado
+                    }
+                });
+        }, 5000);
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+#TOKEN API TELEGRAM:
+'8198002878:AAETjn0ZN7Y2hWc4VyQ2dUQq5FaqxAC6o-w'
+
+promts respuestas del bot:
+"RESPUESTA DEL BOT AL USUARIO ENTRAR POR PRIMERA VEZ AL BOT" star
+👋 Bienvenido, soy BUM RAW🦖, tu asistente virtual.\n\nEstoy para darte una ayuda pre-dirigida sobre nuestros planes
+
+"Responder a los siguientes saludos"
+
+#POSIBLES SALUDOS DEL USUARIO EN ESPAÑOL
+----'hola', 'saludos', 'buenas', 'hey', 'buenas tardes', 'buenos días', 'buen día', 'buen dia', 'holis', 'buenas noches', 'holis', 'holi'----
+
+#RESPUESTA DEL BOT
+¡Hola Campeón! 👋🏼Bienvenido al BUM RAW BOT, he sido creado para brindarte una ayuda prediriga para ayudarte a sacarle el mayor provecho al plan elegido y poder tener tu cuerpo deseado mediante las indicaciones de nuestros planes de entrenamiento.
+
+#EL  BOT ENVIA LOS BOTONES DE LOS PLANES LUEGO DE LA  RESPUESTA DEL SALUDO
+"Estás aquí porque te interesaron nuestros planes en [CBUM RAW](https://github.com/Ronny-Abreu) y quieres más información.\n\nElije un Plan para ver sus beneficios:"
+
+
+#SI EL USUARIO INGRESA EL COMANDO /HELP:
+¡Hola, campeón/a 🫡! \n\n¿Qué plan de entrenamiento te interesa conocer?, recuerda que soy un bot automático por lo tanto solo puedo brindarte una ayuda guiada.
+
+
+"Responder a un mensaje no registrado"
+¡Hola, campeón/a 🫡! \n\nno entendí lo que me quisiste decir, recuerda que soy un bot automático en español y solo puedo brindarte una ayuda guiada.\nSi deseas ayuda, pregúntame sobre uno de nuestros 2 planes.
+
+
+
+"PDF'S A ENVIAR"
+
+plan_aumentar
+🎬 Lista de Reproducción técnica: https://youtu.be/xP4iItH8HBU?si=JjeaPL8Jn74v2dXi,  
+📆 Cronograma Semanal de ejercicios: ./pdfBeneficios/CRONOGRAMA SEMANAL DE ENTRENAMIENTO.pdf,
+🍽️ Lista de Compras + Recetas: ./pdfBeneficios/LISTA DE COMPRAS ALTA EN PROTEINA.pdf,
+📄 Guía de Suplementos: ./pdfBeneficios/GUIA DE SUPLEMENTOS OBJETIVO AUMENTO.pdf,
+🏆 Desafíos mensuales: ./pdfBeneficios/DESAFIOS MENSUALES.pdf
+
+plan_adelgazar:
+💧 Guía de hidratación y Control de antojos: ./pdfBeneficios/GUIA DE HIDRATACION Y CONTROL DE ANTOJOS.pdf,
+📆 Cronograma de Ejercicios de resistencia: ./pdfBeneficios/CRONOGRAMA DE ENTRENAMIENTO PARA DEFINICION MUSCULAR.pdf,
+🍽️ Lista de Compras + Recetas: ./pdfBeneficios/LISTA DE COMPRAS BAJA EN CARBOHIDRATOS.pdf,
+📄 Guía de suplementos: ./pdfBeneficios/GUIA DE SUPLEMENTOS OBJETIVO DEFINICION.pdf,
+🍋 Detox semanal: ./pdfBeneficios/INSTRUCCIONES PARA DESINTONXICACION SEMANAL.pdf

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/IniciarSesion.css') }}">
+    <link rel="icon" href="/static/img/cbumlogoNike.png" type="image/x-icon">
+</head> 
+
+<body>
+    <section>
+        {% for i in range(150) %}
+        <span></span>
+        {% endfor %}
+    </section>
+
+    <div class="padre">
+        <img src="{{ url_for('static', filename='img/bicepss.png') }}" alt="Bíceps">
+    </div>
+
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+
+                <!-- Formulario de inicio de sesión -->
+                <form action="/inicioSesion" method="POST" class="sign-in-form">
+                    <h2 class="title">Iniciar Sesión</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="correo" autocomplete="off" placeholder="Correo" required />
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="contrasena" autocomplete="off" placeholder="Contraseña" required />
+                    </div>
+                    <button class="button">Entrar</button>
+    
+                    <!-- Flash messages (colocado encima del enlace) -->
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <ul>
+                            {% for category, message in messages %}
+                                <li class="flash {{ category }}">{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+                
+                    
+    
+                    <p class="social-text">
+                        <a href="{{ url_for('recuperar_contrasena') }}">¿Has olvidado tu contraseña?</a><br> <br>
+                        <span style="color: white;">¿No tienes cuenta? <a href="{{ url_for('registrarse') }}">Regístrate .</a></span>
+                    </p>                                      
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+    <script src="{{ url_for('static', filename='js/registrarse.js') }}"></script>
+
+</body>
+</html>

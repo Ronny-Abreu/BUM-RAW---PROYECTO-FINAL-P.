@@ -1,0 +1,782 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+                @font-face {
+                font-family: 'ClashDisplay-Extralight';
+                src: url('./fonts/ClashDisplay-Extralight.woff2') format('woff2'),
+                    url('./fonts/ClashDisplay-Extralight.woff') format('woff'),
+                    url('./fonts/ClashDisplay-Extralight.ttf') format('truetype');
+                font-weight: 200;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'ClashDisplay-Light';
+                src: url('./fonts/ClashDisplay-Light.woff2') format('woff2'),
+                    url('./fonts/ClashDisplay-Light.woff') format('woff'),
+                    url('./fonts/ClashDisplay-Light.ttf') format('truetype');
+                font-weight: 300;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'ClashDisplay-Regular';
+                src: url('./fonts/ClashDisplay-Regular.woff2') format('woff2'),
+                    url('./fonts/ClashDisplay-Regular.woff') format('woff'),
+                    url('./fonts/ClashDisplay-Regular.ttf') format('truetype');
+                font-weight: 400;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'ClashDisplay-Medium';
+                src: url('./fonts/ClashDisplay-Medium.woff2') format('woff2'),
+                    url('./fonts/ClashDisplay-Medium.woff') format('woff'),
+                    url('./fonts/ClashDisplay-Medium.ttf') format('truetype');
+                font-weight: 500;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'ClashDisplay-Semibold';
+                src: url('./fonts/ClashDisplay-Semibold.woff2') format('woff2'),
+                    url('./fonts/ClashDisplay-Semibold.woff') format('woff'),
+                    url('./fonts/ClashDisplay-Semibold.ttf') format('truetype');
+                font-weight: 600;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'ClashDisplay-Bold';
+                src: url('./fonts/ClashDisplay-Bold.woff2') format('woff2'),
+                    url('./fonts/ClashDisplay-Bold.woff') format('woff'),
+                    url('./fonts/ClashDisplay-Bold.ttf') format('truetype');
+                font-weight: 700;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'ClashDisplay-Variable';
+                src: url('./fonts/ClashDisplay-Variable.woff2') format('woff2'),
+                    url('./fonts/ClashDisplay-Variable.woff') format('woff'),
+                    url('./fonts/ClashDisplay-Variable.ttf') format('truetype');
+                font-weight: 200 700;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-Thin';
+                src: url('../fonts/Switzer-Thin.woff2') format('woff2'),
+                    url('../fonts/Switzer-Thin.woff') format('woff'),
+                    url('../fonts/Switzer-Thin.ttf') format('truetype');
+                font-weight: 100;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-ThinItalic';
+                src: url('../fonts/Switzer-ThinItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-ThinItalic.woff') format('woff'),
+                    url('../fonts/Switzer-ThinItalic.ttf') format('truetype');
+                font-weight: 100;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Extralight';
+                src: url('../fonts/Switzer-Extralight.woff2') format('woff2'),
+                    url('../fonts/Switzer-Extralight.woff') format('woff'),
+                    url('../fonts/Switzer-Extralight.ttf') format('truetype');
+                font-weight: 200;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-ExtralightItalic';
+                src: url('../fonts/Switzer-ExtralightItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-ExtralightItalic.woff') format('woff'),
+                    url('../fonts/Switzer-ExtralightItalic.ttf') format('truetype');
+                font-weight: 200;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Light';
+                src: url('../fonts/Switzer-Light.woff2') format('woff2'),
+                    url('../fonts/Switzer-Light.woff') format('woff'),
+                    url('../fonts/Switzer-Light.ttf') format('truetype');
+                font-weight: 300;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-LightItalic';
+                src: url('../fonts/Switzer-LightItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-LightItalic.woff') format('woff'),
+                    url('../fonts/Switzer-LightItalic.ttf') format('truetype');
+                font-weight: 300;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Regular';
+                src: url('../fonts/Switzer-Regular.woff2') format('woff2'),
+                    url('../fonts/Switzer-Regular.woff') format('woff'),
+                    url('../fonts/Switzer-Regular.ttf') format('truetype');
+                font-weight: 400;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-Italic';
+                src: url('../fonts/Switzer-Italic.woff2') format('woff2'),
+                    url('../fonts/Switzer-Italic.woff') format('woff'),
+                    url('../fonts/Switzer-Italic.ttf') format('truetype');
+                font-weight: 400;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Medium';
+                src: url('../fonts/Switzer-Medium.woff2') format('woff2'),
+                    url('../fonts/Switzer-Medium.woff') format('woff'),
+                    url('../fonts/Switzer-Medium.ttf') format('truetype');
+                font-weight: 500;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-MediumItalic';
+                src: url('../fonts/Switzer-MediumItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-MediumItalic.woff') format('woff'),
+                    url('../fonts/Switzer-MediumItalic.ttf') format('truetype');
+                font-weight: 500;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Semibold';
+                src: url('../fonts/Switzer-Semibold.woff2') format('woff2'),
+                    url('../fonts/Switzer-Semibold.woff') format('woff'),
+                    url('../fonts/Switzer-Semibold.ttf') format('truetype');
+                font-weight: 600;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-SemiboldItalic';
+                src: url('../fonts/Switzer-SemiboldItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-SemiboldItalic.woff') format('woff'),
+                    url('../fonts/Switzer-SemiboldItalic.ttf') format('truetype');
+                font-weight: 600;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Bold';
+                src: url('../fonts/Switzer-Bold.woff2') format('woff2'),
+                    url('../fonts/Switzer-Bold.woff') format('woff'),
+                    url('../fonts/Switzer-Bold.ttf') format('truetype');
+                font-weight: 700;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-BoldItalic';
+                src: url('../fonts/Switzer-BoldItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-BoldItalic.woff') format('woff'),
+                    url('../fonts/Switzer-BoldItalic.ttf') format('truetype');
+                font-weight: 700;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Extrabold';
+                src: url('../fonts/Switzer-Extrabold.woff2') format('woff2'),
+                    url('../fonts/Switzer-Extrabold.woff') format('woff'),
+                    url('../fonts/Switzer-Extrabold.ttf') format('truetype');
+                font-weight: 800;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-ExtraboldItalic';
+                src: url('../fonts/Switzer-ExtraboldItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-ExtraboldItalic.woff') format('woff'),
+                    url('../fonts/Switzer-ExtraboldItalic.ttf') format('truetype');
+                font-weight: 800;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Black';
+                src: url('../fonts/Switzer-Black.woff2') format('woff2'),
+                    url('../fonts/Switzer-Black.woff') format('woff'),
+                    url('../fonts/Switzer-Black.ttf') format('truetype');
+                font-weight: 900;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-BlackItalic';
+                src: url('../fonts/Switzer-BlackItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-BlackItalic.woff') format('woff'),
+                    url('../fonts/Switzer-BlackItalic.ttf') format('truetype');
+                font-weight: 900;
+                font-display: swap;
+                font-style: italic;
+            }
+            @font-face {
+                font-family: 'Switzer-Variable';
+                src: url('../fonts/Switzer-Variable.woff2') format('woff2'),
+                    url('../fonts/Switzer-Variable.woff') format('woff'),
+                    url('../fonts/Switzer-Variable.ttf') format('truetype');
+                font-weight: 100 900;
+                font-display: swap;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: 'Switzer-VariableItalic';
+                src: url('../fonts/Switzer-VariableItalic.woff2') format('woff2'),
+                    url('../fonts/Switzer-VariableItalic.woff') format('woff'),
+                    url('../fonts/Switzer-VariableItalic.ttf') format('truetype');
+                font-weight: 100 900;
+                font-display: swap;
+                font-style: italic;
+            }
+            
+            
+
+            :root {
+                --background-color-light: #fcfdfc;
+                --text-color-light: #0D0E12;
+                --background-color-dark: #0D0E12;
+                --text-color-dark: #F1F1F4;
+                --border-color-dark: #32353e;
+                --border-color-light: #ebebf1;
+                --hover-background-color-light: #ebebf1;
+                --hover-background-color-dark: #33343c;
+                --foreground-color-light: 228, 10%, 20%;
+                --foreground-color-dark: 0, 0%, 90%;
+                --border-color: 222, 10%, 19%;
+                --navbar-color-light: 
+            }
+
+            body[data-theme="light"] {
+                --background-color: var(--background-color-light);
+                --text-color: var(--text-color-light);
+                --border-color: var(--border-color-light);
+                --hover-background: var(--hover-background-color-light);
+                --foreground-color: var(--foreground-color-light);
+            }
+
+            body[data-theme="dark"] {
+                --background-color: var(--background-color-dark);
+                --text-color: var(--text-color-dark);
+                --border-color: var(--border-color-dark);
+                --hover-background: var(--hover-background-color-dark);
+                --foreground-color: var(--foreground-color-dark);
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: var(--background-color);
+                color: var(--text-color);
+                font-family: "ClashDisplay-Regular", sans-serif;
+                transition: background-color 0.3s, color 0.3s;
+                overflow-x: hidden;
+                border-color: var(--border-color);
+            }
+
+            a {
+                text-decoration: none;
+                color: (var(--text-color));
+            }
+
+            .icono {
+                position: absolute;
+                color: #ff85c0;
+                font-size: 20px;
+                opacity: 0.6;
+            }
+
+            .icono-1 { top: 50%; left: 30px; }
+            .icono-2 { top: 30%; left: 0; }
+            .icono-3 { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+            .icono-4 { bottom: 15%; right: 10%; }
+
+            .nav-header {
+                position: sticky;
+                top: 0;
+                left: 0;
+                z-index: 99999;
+                backdrop-filter: var(--tw-backdrop-blur);
+                backdrop-filter: blur(8px);
+                background-color: transparent;
+                width: 100%;
+                height: 4rem;
+            }
+
+            .nav {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                position: absolute;
+                height: 4rem;
+            }
+
+            .nav-firstItems {
+                display: flex;
+                margin-left: 30px;
+            }
+
+            .ul-nav {
+                display: flex;
+                list-style: none;
+                padding: 20px;
+            }
+
+            .nav-logo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .iconLuffy {
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+            }
+
+            .logoText {
+                font-family: "DM Sans", sans-serif;
+                font-weight: 800;
+                font-size: 20px;
+                margin-left: 9px;
+                margin-right: 0;
+            }
+
+            .ul-nav a {
+                margin-right: 18px;
+                font-weight: 400;
+                font-family: "DM Sans", sans-serif;
+                font-size: 18px;
+            }
+
+            .hrefNoMargin {
+                margin-right: 0;
+            }
+
+            .ul-nav a:hover {
+                color: #4989ff;
+                fill: #4989ff;
+            }
+
+            .menu-idioma, .menu-tema {
+                position: relative;
+                display: inline-block;
+                align-items: center;
+                justify-content: center;
+                margin-left: 170px;
+            }
+
+            .menu-idioma .boton, .menu-tema .boton {
+                background-color: transparent;
+                color: var(--text-color);
+                padding: 10px 15px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                font-size: 14px;
+            }
+
+            .menu-idioma .boton img, .menu-tema .boton img {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+                border-radius: 50%;
+            }
+
+            .menu-idioma .dropdown, .menu-tema .dropdown {
+                display: none;
+                position: absolute;
+                background-color: var(--background-color);
+                box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 6px;
+                border: 1px solid var(--border-color);
+                margin-top: 8px;
+                width: 200px;
+                z-index: 1;
+            }
+
+            .menu-idioma:hover, .menu-tema:hover {
+                background-color: var(--border-color);
+                border: 1 solid transparent;
+                border-radius: 6px;
+            }
+
+            .menu-idioma .dropdown a, .menu-tema .dropdown a {
+                color: var(--text-color);
+                text-decoration: none;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                font-weight: 500;
+                font-family: 'DM Sans', sans-serif;
+            }
+
+            .menu-idioma .dropdown a:hover, .menu-tema .dropdown a:hover {
+                color: rgb(59 130 246);
+            }
+
+            .menu-idioma .dropdown a img, .menu-tema .dropdown a img {
+                width: 20px;
+                height: 20px;
+                margin-right: 8px;
+                border-radius: 50%;
+            }
+
+            .menu-idioma .dropdown a:hover, .menu-tema .dropdown a:hover {
+                background-color: var(--background-color);
+            }
+
+            .selectionText {
+                font-size: 14px;
+                line-height: 20px;
+                padding-top: .375rem;
+                padding-bottom: .375rem;
+                padding-left: .5rem;
+                padding-right: .5rem;
+                font-family: "ClashDisplay-Medium", sans-serif;
+            }
+
+            .iconIdiomaDown {
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                margin-left: 8px;
+            }
+
+            #dropdown-theme svg {
+                margin-right: 10px;
+                color: var(--text-color);
+            }
+
+            #dropdown-theme span {
+                font-family: "DM Sans", sans-serif;
+            }
+
+            .menu-tema {
+                border-radius: 6px;
+                border: 2px solid var(--hover-background);
+            }
+
+            .loginOption {
+                margin-left: 20px;
+            }
+
+            .last-items {
+                position: relative;
+                left: 130%;
+                top: 3px;
+            }
+
+            .SVGNav {
+                display: none;
+            }
+
+            .openMenuButton {
+                display: none;
+            }
+            
+            #separatorMobile {
+                display: none;
+            }
+
+            #main {
+                max-width: 90%;
+                height: 100vh;
+            }
+
+            .allContent {
+                display: flex;
+                width: auto;
+                margin-top: 200px;
+            }
+
+            .textToGradientBellow {
+                font-family: "Poppins", sans-serif;
+                font-size: 62px;
+                background: radial-gradient(129.03% 100% at 120.97% 81.45%,#00a7effb 10.08%,#5849ff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                color: transparent;
+            }
+
+            .boldH1Span {
+                font-family: "ClashDisplay-Bold", sans-serif;
+                color: var(--text-color);
+            }
+
+            .leftContent {
+                margin-right: auto;
+                width: auto;
+                margin-left: 100px;
+                justify-content: center;
+            }
+            
+            .leftContentInfo {
+                font-size: 1.5rem;
+                line-height: 2rem;
+                font-family: "DM Sans", sans-serif;
+                font-weight: 400;
+                color: #a5a5a6;
+            }
+
+
+            /* From Uiverse.io by satyamchaudharydev */ 
+            /* this is a recreation of twitter search in css */
+            .form {
+                --input-text-color: #fff;
+                --input-bg-color: #283542;
+                --focus-input-bg-color: transparent;
+                --text-color: #949faa;
+                --active-color: #1b9bee;
+                --width-of-input: 200px;
+                --inline-padding-of-input: 1.2em;
+                --gap: 0.9rem;
+            }
+            .form {
+                font-size: 0.9rem;
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                width: var(--width-of-input);
+                position: relative;
+                isolation: isolate;
+            }
+            .fancy-bg {
+                position: absolute;
+                width: 100%;
+                inset: 0;
+                background: var(--input-bg-color);
+                border-radius: 30px;
+                height: 100%;
+                z-index: -1;
+                pointer-events: none;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            }
+            label {
+                width: 100%;
+                padding: 0.8em;
+                height: 40px;
+                padding-inline: var(--inline-padding-of-input);
+                display: flex;
+                align-items: center;
+            }
+            .search,.close-btn {
+                position: absolute;
+            }
+            .search {
+                fill: var(--text-color);
+                left: var(--inline-padding-of-input);
+            }
+            svg {
+                width: 17px;
+                display: block;
+            }
+            .close-btn {
+                border: none;
+                right: var(--inline-padding-of-input);
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                padding: 0.1em;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: var(--active-color);
+                opacity: 0;
+                visibility: hidden;
+            }
+            .input {
+                color: var(--input-text-color);
+                width: 100%;
+                margin-inline: min(2em,calc(var(--inline-padding-of-input) + var(--gap)));
+                background: none;
+                border: none;
+            }
+            .input:focus {
+                outline: none;
+            }
+            .input::placeholder {
+                color: var(--text-color)
+            }
+            .input:focus ~ .fancy-bg {
+                border: 1px solid var(--active-color);
+                background: var(--focus-input-bg-color);
+            }
+            .input:focus ~ .search {
+                fill: var(--active-color);
+            }
+            .input:valid ~ .close-btn {
+                opacity: 1;
+                visibility: visible;
+            }
+            input:-webkit-autofill,
+            input:-webkit-autofill:hover,
+            input:-webkit-autofill:focus,
+            input:-webkit-autofill:active {
+                -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+                -webkit-transition-delay: 9999s;
+            }
+
+
+            .avatar-container {
+                width: 350px;
+                height: 350px;
+                right: 100px;
+            }
+
+            .containerrr {
+                position: relative;
+                margin-bottom: 2.5rem; /* Similar a `mb-10` */
+                width: 392px;
+                height: 392px;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                }
+            
+            
+                .image-wrapper {
+                position: relative;
+                border-radius: 50%; /* Similar a `rounded-full` */
+                overflow: hidden;
+                z-index: 1;
+                aspect-ratio: 1/1;
+                width: 380px;
+                height: 380px;
+                }
+            
+                .image-wrapper img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Similar a `object-cover` */
+                }
+
+            .avatar-foto {
+                border-radius: 50%;
+                width: 400px;
+                height: 400px;
+            }
+
+            #about { 
+                font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                max-width: 90%;
+                height: 70vh;
+                position: relative;
+            }
+
+            .allContentAbout {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+            }
+
+            .about1 {
+                position: absolute;
+                bottom: 750px; /* Ajusta la distancia desde la parte superior */
+                left: 100px;
+                right: 200px;
+                margin: 0 auto;
+            }
+
+            /* Cambiar color de la información dentro del cuadro */
+            .card {
+                width: 50%; /* Aumentamos el tamaño de la tarjeta */
+                background: rgb(44, 44, 44);
+                font-family: "Courier New", Courier, monospace;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+                border-bottom-left-radius: 4px;
+                border-bottom-right-radius: 4px;
+                overflow: hidden;
+            }
+
+            .card__title {
+                color: white;
+                font-weight: bold;
+                padding: 5px 30px;
+                border-bottom: 1px solid rgb(167, 159, 159);
+                font-size: 0.95rem;
+                display: flex;
+                justify-content: space-between;
+                }
+
+            .card__data {
+                font-size: 0.8rem;
+                display: flex;
+                justify-content: space-between;
+                border-right: 1px solid rgb(203, 203, 203);
+                border-left: 1px solid rgb(203, 203, 203);
+                border-bottom: 1px solid rgb(203, 203, 203);
+                }
+
+            .card__right {
+                width: 50%; /* Aumentamos el tamaño de la columna de los nombres */
+                border-right: 1px solid rgb(203, 203, 203);
+            }
+
+            .card__left {
+                width: 100%; /* Ajustamos el tamaño de la columna del correo */
+                text-align: end;
+            }
+
+            /* Cambiar color del texto en los items */
+            .item {
+                padding: 3px 0;
+                background-color: white;
+                color: #333; /* Cambiar color del texto (puedes elegir otro) */
+            }
+
+            /* Color alternado de las filas */
+            .card__right .item {
+                padding-left: 0.8em;
+            }
+
+            .card__left .item {
+                padding-right: 0.8em;
+            }
+
+            .item:nth-child(even) {
+                background: rgb(234, 235, 234);
+            }
+
+            /* Opcional: Cambiar el color de las filas de la columna de correo */
+            .card__left .item {
+                color: #0073e6; /* Por ejemplo, un color azul para los correos */
+            }
+            
+            
+
+
+
+
+            /* Móviles */
+            @media (max-width: 767px) {
+                .openMenuButton {
+                    display: block;
+                }
+
+                .allContent {
+                    flex-direction: column;
+            }
+        }

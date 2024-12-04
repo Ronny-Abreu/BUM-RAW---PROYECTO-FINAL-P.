@@ -1,0 +1,978 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+
+/* Configuración general */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* Bloquea el desplazamiento */
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    --inherit: inherit;
+    --current: currentColor;
+    --transparent: transparent;
+    --black: #000;
+    --white: #fff;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --slate-950: #020617;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --gray-950: #030712;
+    --zinc-50: #fafafa;
+    --zinc-100: #f4f4f5;
+    --zinc-200: #e4e4e7;
+    --zinc-300: #d4d4d8;
+    --zinc-400: #a1a1aa;
+    --zinc-500: #71717a;
+    --zinc-600: #52525b;
+    --zinc-700: #3f3f46;
+    --zinc-800: #27272a;
+    --zinc-900: #18181b;
+    --zinc-950: #09090b;
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
+    --neutral-950: #0a0a0a;
+    --stone-50: #fafaf9;
+    --stone-100: #f5f5f4;
+    --stone-200: #e7e5e4;
+    --stone-300: #d6d3d1;
+    --stone-400: #a8a29e;
+    --stone-500: #78716c;
+    --stone-600: #57534e;
+    --stone-700: #44403c;
+    --stone-800: #292524;
+    --stone-900: #1c1917;
+    --stone-950: #0c0a09;
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-300: #fca5a5;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --red-800: #991b1b;
+    --red-900: #7f1d1d;
+    --red-950: #450a0a;
+    --orange-50: #fff7ed;
+    --orange-100: #ffedd5;
+    --orange-200: #fed7aa;
+    --orange-300: #fdba74;
+    --orange-400: #fb923c;
+    --orange-500: #f97316;
+    --orange-600: #ea580c;
+    --orange-700: #c2410c;
+    --orange-800: #9a3412;
+    --orange-900: #7c2d12;
+    --orange-950: #431407;
+    --amber-50: #fffbeb;
+    --amber-100: #fef3c7;
+    --amber-200: #fde68a;
+    --amber-300: #fcd34d;
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+    --amber-700: #b45309;
+    --amber-800: #92400e;
+    --amber-900: #78350f;
+    --amber-950: #451a03;
+    --yellow-50: #fefce8;
+    --yellow-100: #fef9c3;
+    --yellow-200: #fef08a;
+    --yellow-300: #fde047;
+    --yellow-400: #facc15;
+    --yellow-500: #eab308;
+    --yellow-600: #ca8a04;
+    --yellow-700: #a16207;
+    --yellow-800: #854d0e;
+    --yellow-900: #713f12;
+    --yellow-950: #422006;
+    --lime-50: #f7fee7;
+    --lime-100: #ecfccb;
+    --lime-200: #d9f99d;
+    --lime-300: #bef264;
+    --lime-400: #a3e635;
+    --lime-500: #84cc16;
+    --lime-600: #65a30d;
+    --lime-700: #4d7c0f;
+    --lime-800: #3f6212;
+    --lime-900: #365314;
+    --lime-950: #1a2e05;
+    --green-50: #f0fdf4;
+    --green-100: #dcfce7;
+    --green-200: #bbf7d0;
+    --green-300: #86efac;
+    --green-400: #4ade80;
+    --green-500: #22c55e;
+    --green-600: #16a34a;
+    --green-700: #15803d;
+    --green-800: #166534;
+    --green-900: #14532d;
+    --green-950: #052e16;
+    --emerald-50: #ecfdf5;
+    --emerald-100: #d1fae5;
+    --emerald-200: #a7f3d0;
+    --emerald-300: #6ee7b7;
+    --emerald-400: #34d399;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+    --emerald-700: #047857;
+    --emerald-800: #065f46;
+    --emerald-900: #064e3b;
+    --emerald-950: #022c22;
+    --teal: #6cefef;
+    --cyan-50: #ecfeff;
+    --cyan-100: #cffafe;
+    --cyan-200: #a5f3fc;
+    --cyan-300: #67e8f9;
+    --cyan-400: #22d3ee;
+    --cyan-500: #06b6d4;
+    --cyan-600: #0891b2;
+    --cyan-700: #0e7490;
+    --cyan-800: #155e75;
+    --cyan-900: #164e63;
+    --cyan-950: #083344;
+    --sky-50: #f0f9ff;
+    --sky-100: #e0f2fe;
+    --sky-200: #bae6fd;
+    --sky-300: #7dd3fc;
+    --sky-400: #38bdf8;
+    --sky-500: #0ea5e9;
+    --sky-600: #0284c7;
+    --sky-700: #0369a1;
+    --sky-800: #075985;
+    --sky-900: #0c4a6e;
+    --sky-950: #082f49;
+    --blue: #4648ff;
+    --indigo-50: #eef2ff;
+    --indigo-100: #e0e7ff;
+    --indigo-200: #c7d2fe;
+    --indigo-300: #a5b4fc;
+    --indigo-400: #818cf8;
+    --indigo-500: #6366f1;
+    --indigo-600: #4f46e5;
+    --indigo-700: #4338ca;
+    --indigo-800: #3730a3;
+    --indigo-900: #312e81;
+    --indigo-950: #1e1b4b;
+    --violet-50: #f5f3ff;
+    --violet-100: #ede9fe;
+    --violet-200: #ddd6fe;
+    --violet-300: #c4b5fd;
+    --violet-400: #a78bfa;
+    --violet-500: #8b5cf6;
+    --violet-600: #7c3aed;
+    --violet-700: #6d28d9;
+    --violet-800: #5b21b6;
+    --violet-900: #4c1d95;
+    --violet-950: #2e1065;
+    --purple: #712fff;
+    --fuchsia-50: #fdf4ff;
+    --fuchsia-100: #fae8ff;
+    --fuchsia-200: #f5d0fe;
+    --fuchsia-300: #f0abfc;
+    --fuchsia-400: #e879f9;
+    --fuchsia-500: #d946ef;
+    --fuchsia-600: #c026d3;
+    --fuchsia-700: #a21caf;
+    --fuchsia-800: #86198f;
+    --fuchsia-900: #701a75;
+    --fuchsia-950: #4a044e;
+    --pink-50: #fdf2f8;
+    --pink-100: #fce7f3;
+    --pink-200: #fbcfe8;
+    --pink-300: #f9a8d4;
+    --pink-400: #f472b6;
+    --pink-500: #ec4899;
+    --pink-600: #db2777;
+    --pink-700: #be185d;
+    --pink-800: #9d174d;
+    --pink-900: #831843;
+    --pink-950: #500724;
+    --rose-50: #fff1f2;
+    --rose-100: #ffe4e6;
+    --rose-200: #fecdd3;
+    --rose-300: #fda4af;
+    --rose-400: #fb7185;
+    --rose-500: #f43f5e;
+    --rose-600: #e11d48;
+    --rose-700: #be123c;
+    --rose-800: #9f1239;
+    --rose-900: #881337;
+    --rose-950: #4c0519;
+    --bg: #000;
+    --salmon: #ff7f65;
+    --hotpink: #f63d68;
+    --peach: #ffd9d1;
+    --lightteal: #12fff7;
+    --lightgreen: #b3ffab;
+    --fusionred: #ff5f6d;
+    --lightorange: #ffc371;
+    --waxorange: #fcc188;
+    --bluishpurple: #7042d2;
+    --bluegem: #2e008e;
+    --mango: #ffc371;
+    --brinkpink: #ff5f6d;
+    --artycyan: var(--design-primary);
+    --pastelgreen: var(--design-secondary);
+    --homefooter: #131445;
+    --seofooter: #42111c;
+    --cacfooter: #0d0028;
+    --animationsfooter: #453525;
+    --designfooter: var(--design-footer);
+    --design-primary: #12fff7;
+    --design-secondary: #b3ffab;
+    --foreground-rgb: 255,255,255;
+    --background-start-rgb: 0,0,0;
+    --background-end-rgb: 0,0,0;
+    --design-footer: var(--blue);
+    line-height: inherit;
+    font-family: var(--font-montserrat);
+    color: rgb(var(--foreground-rgb));
+    --font-inter: "__Inter_36bd41","__Inter_Fallback_36bd41";
+    --font-poppins: "__Poppins_8c73d4","__Poppins_Fallback_8c73d4";
+    --font-montserrat: "__Montserrat_f7d4ad","__Montserrat_Fallback_f7d4ad";
+    --font-roboto: "__Roboto_2cac55","__Roboto_Fallback_2cac55";
+    --tw-bg-opacity: 1;
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+    display: flex;
+    aspect-ratio: 1280/691;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(/static/img/hero.svg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Encabezado */
+header {
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo-img {
+    height: 200px; /* Ajusta según el tamaño deseado */
+    margin-right: 10px;
+}
+
+/* Navbar */
+.navbar {
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-feature-settings: normal;
+    font-variation-settings: normal;
+    -webkit-tap-highlight-color: transparent;
+    --inherit: inherit;
+    --current: currentColor;
+    --transparent: transparent;
+    --black: #000;
+    --white: #fff;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --slate-950: #020617;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --gray-950: #030712;
+    --zinc-50: #fafafa;
+    --zinc-100: #f4f4f5;
+    --zinc-200: #e4e4e7;
+    --zinc-300: #d4d4d8;
+    --zinc-400: #a1a1aa;
+    --zinc-500: #71717a;
+    --zinc-600: #52525b;
+    --zinc-700: #3f3f46;
+    --zinc-800: #27272a;
+    --zinc-900: #18181b;
+    --zinc-950: #09090b;
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
+    --neutral-950: #0a0a0a;
+    --stone-50: #fafaf9;
+    --stone-100: #f5f5f4;
+    --stone-200: #e7e5e4;
+    --stone-300: #d6d3d1;
+    --stone-400: #a8a29e;
+    --stone-500: #78716c;
+    --stone-600: #57534e;
+    --stone-700: #44403c;
+    --stone-800: #292524;
+    --stone-900: #1c1917;
+    --stone-950: #0c0a09;
+    --red-50: #fef2f2;
+    --red-100: #fee2e2;
+    --red-200: #fecaca;
+    --red-300: #fca5a5;
+    --red-400: #f87171;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --red-700: #b91c1c;
+    --red-800: #991b1b;
+    --red-900: #7f1d1d;
+    --red-950: #450a0a;
+    --orange-50: #fff7ed;
+    --orange-100: #ffedd5;
+    --orange-200: #fed7aa;
+    --orange-300: #fdba74;
+    --orange-400: #fb923c;
+    --orange-500: #f97316;
+    --orange-600: #ea580c;
+    --orange-700: #c2410c;
+    --orange-800: #9a3412;
+    --orange-900: #7c2d12;
+    --orange-950: #431407;
+    --amber-50: #fffbeb;
+    --amber-100: #fef3c7;
+    --amber-200: #fde68a;
+    --amber-300: #fcd34d;
+    --amber-400: #fbbf24;
+    --amber-500: #f59e0b;
+    --amber-600: #d97706;
+    --amber-700: #b45309;
+    --amber-800: #92400e;
+    --amber-900: #78350f;
+    --amber-950: #451a03;
+    --yellow-50: #fefce8;
+    --yellow-100: #fef9c3;
+    --yellow-200: #fef08a;
+    --yellow-300: #fde047;
+    --yellow-400: #facc15;
+    --yellow-500: #eab308;
+    --yellow-600: #ca8a04;
+    --yellow-700: #a16207;
+    --yellow-800: #854d0e;
+    --yellow-900: #713f12;
+    --yellow-950: #422006;
+    --lime-50: #f7fee7;
+    --lime-100: #ecfccb;
+    --lime-200: #d9f99d;
+    --lime-300: #b40000;
+    --lime-400: #a3e635;
+    --lime-500: #84cc16;
+    --lime-600: #65a30d;
+    --lime-700: #4d7c0f;
+    --lime-800: #3f6212;
+    --lime-900: #365314;
+    --lime-950: #1a2e05;
+    --green-50: #f0fdf4;
+    --green-100: #dcfce7;
+    --green-200: #bbf7d0;
+    --green-300: #86efac;
+    --green-400: #4ade80;
+    --green-500: #22c55e;
+    --green-600: #16a34a;
+    --green-700: #15803d;
+    --green-800: #166534;
+    --green-900: #14532d;
+    --green-950: #052e16;
+    --emerald-50: #ecfdf5;
+    --emerald-100: #d1fae5;
+    --emerald-200: #a7f3d0;
+    --emerald-300: #6ee7b7;
+    --emerald-400: #34d399;
+    --emerald-500: #10b981;
+    --emerald-600: #059669;
+    --emerald-700: #047857;
+    --emerald-800: #065f46;
+    --emerald-900: #064e3b;
+    --emerald-950: #022c22;
+    --teal: #6cefef;
+    --cyan-50: #ecfeff;
+    --cyan-100: #cffafe;
+    --cyan-200: #a5f3fc;
+    --cyan-300: #67e8f9;
+    --cyan-400: #22d3ee;
+    --cyan-500: #06b6d4;
+    --cyan-600: #0891b2;
+    --cyan-700: #0e7490;
+    --cyan-800: #155e75;
+    --cyan-900: #164e63;
+    --cyan-950: #083344;
+    --sky-50: #f0f9ff;
+    --sky-100: #e0f2fe;
+    --sky-200: #bae6fd;
+    --sky-300: #7dd3fc;
+    --sky-400: #38bdf8;
+    --sky-500: #0ea5e9;
+    --sky-600: #0284c7;
+    --sky-700: #0369a1;
+    --sky-800: #075985;
+    --sky-900: #0c4a6e;
+    --sky-950: #082f49;
+    --blue: #4648ff;
+    --indigo-50: #eef2ff;
+    --indigo-100: #e0e7ff;
+    --indigo-200: #c7d2fe;
+    --indigo-300: #a5b4fc;
+    --indigo-400: #818cf8;
+    --indigo-500: #6366f1;
+    --indigo-600: #4f46e5;
+    --indigo-700: #4338ca;
+    --indigo-800: #3730a3;
+    --indigo-900: #312e81;
+    --indigo-950: #1e1b4b;
+    --violet-50: #f5f3ff;
+    --violet-100: #ede9fe;
+    --violet-200: #ddd6fe;
+    --violet-300: #c4b5fd;
+    --violet-400: #a78bfa;
+    --violet-500: #8b5cf6;
+    --violet-600: #7c3aed;
+    --violet-700: #6d28d9;
+    --violet-800: #5b21b6;
+    --violet-900: #4c1d95;
+    --violet-950: #2e1065;
+    --purple: #712fff;
+    --fuchsia-50: #fdf4ff;
+    --fuchsia-100: #fae8ff;
+    --fuchsia-200: #f5d0fe;
+    --fuchsia-300: #f0abfc;
+    --fuchsia-400: #e879f9;
+    --fuchsia-500: #d946ef;
+    --fuchsia-600: #c026d3;
+    --fuchsia-700: #a21caf;
+    --fuchsia-800: #86198f;
+    --fuchsia-900: #701a75;
+    --fuchsia-950: #4a044e;
+    --pink-50: #fdf2f8;
+    --pink-100: #fce7f3;
+    --pink-200: #fbcfe8;
+    --pink-300: #f9a8d4;
+    --pink-400: #f472b6;
+    --pink-500: #ec4899;
+    --pink-600: #db2777;
+    --pink-700: #be185d;
+    --pink-800: #9d174d;
+    --pink-900: #831843;
+    --pink-950: #500724;
+    --rose-50: #fff1f2;
+    --rose-100: #ffe4e6;
+    --rose-200: #fecdd3;
+    --rose-300: #fda4af;
+    --rose-400: #fb7185;
+    --rose-500: #f43f5e;
+    --rose-600: #e11d48;
+    --rose-700: #be123c;
+    --rose-800: #9f1239;
+    --rose-900: #881337;
+    --rose-950: #4c0519;
+    --bg: #000;
+    --salmon: #ff7f65;
+    --hotpink: #f63d68;
+    --peach: #ffd9d1;
+    --lightteal: #12fff7;
+    --lightgreen: #b3ffab;
+    --fusionred: #ff5f6d;
+    --lightorange: #ffc371;
+    --waxorange: #fcc188;
+    --bluishpurple: #7042d2;
+    --bluegem: #2e008e;
+    --mango: #ffc371;
+    --brinkpink: #ff5f6d;
+    --artycyan: var(--design-primary);
+    --pastelgreen: var(--design-secondary);
+    --homefooter: #131445;
+    --seofooter: #42111c;
+    --cacfooter: #0d0028;
+    --animationsfooter: #453525;
+    --designfooter: var(--design-footer);
+    --design-primary: #12fff7;
+    --design-secondary: #b3ffab;
+    --foreground-rgb: 255,255,255;
+    --background-start-rgb: 0,0,0;
+    --background-end-rgb: 0,0,0;
+    --design-footer: var(--blue);
+    font-family: "Poppins", sans-serif;
+    color: rgb(var(--foreground-rgb));
+    --font-inter: "__Inter_36bd41","__Inter_Fallback_36bd41";
+    --font-poppins: "__Poppins_8c73d4","__Poppins_Fallback_8c73d4";
+    --font-montserrat: "__Montserrat_f7d4ad","__Montserrat_Fallback_f7d4ad";
+    --font-roboto: "__Roboto_2cac55","__Roboto_Fallback_2cac55";
+    --tw-bg-opacity: 1;
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+    position: fixed;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 0.5rem;
+    
+    /* Poner blurr */
+    padding-bottom: 2.10rem;
+    /* ------------ */
+    
+    font-size: 2.875rem;
+    line-height: 0.25rem;
+    --tw-backdrop-blur: blur(1px);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center; /* Centra el logo y el ul verticalmente */
+}
+
+.navbar ul {
+list-style: none;
+display: inline-flex;
+gap: 25px;
+margin-bottom: 80px;
+margin-left: 400px;
+
+}
+
+.navbar a {
+text-decoration: none;
+color: rgb(156, 156, 156);
+font-size: 17px;
+transition: color 0.1s ease;
+}
+
+.navbar a:hover {
+color: #b6b6b6;
+
+}
+
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(5, 65, 65);
+}
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sign svg {
+    width: 17px;
+}
+.sign svg path {
+    fill: white;
+}
+.text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+.Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+.Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+.Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+.Btn:active {
+    transform: translate(2px, 2px);
+}
+
+/* From Uiverse.io by aagam147 */ 
+.button {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 9px 12px;
+gap: 8px;
+height: 45px;
+width: 150px;
+border: none;
+background: rgba(153, 153, 153, 0.295);
+border-radius: 50px;
+cursor: pointer;
+position: relative;
+margin-left: 400px;
+}
+
+.lable {
+line-height: 22px;
+font-size: 15px;
+color: #ffffff;
+margin-left: 20px;
+font-family: "Poppins", sans-serif;
+letter-spacing: 1px;
+}
+
+.button .span {
+border-radius: 50%;
+background-color: rgb(255, 255, 255);
+padding: 10px;
+position: absolute;
+left: 0;
+}
+
+.button:hover {
+background: #009af328;
+}
+
+.button:hover .svg-icon {
+animation: slope 0.8s linear infinite;
+}
+
+@keyframes slope {
+0% {
+}
+
+50% {
+    transform: rotate(15deg);
+}
+
+100% {
+}
+}
+
+/* Hero Section */
+.hero {
+height: calc(100vh - 80px); /* Resta el espacio del header */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+}
+
+.hero h1 {
+font-size: 5.500rem;
+margin-bottom: 20px;
+margin-top: 100px;
+line-height: 1.4;
+font-family: "Poppins", sans-serif;
+color: #929d9c;
+background: linear-gradient(to right, #fff, #333); /* Gris oscuro a blanco */
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.hero p {
+font-size: 1.2rem;
+margin-bottom: 80px;
+font-family: "Poppins", sans-serif;
+color: #cadbd9;
+}
+
+
+/* From Uiverse.io by doniaskima */ 
+.btn-17,
+.btn-17 *,
+.btn-17 :after,
+.btn-17 :before,
+.btn-17:after,
+.btn-17:before {
+border: 0 solid;
+box-sizing: border-box;
+}
+
+.btn-17 {
+-webkit-tap-highlight-color: transparent;
+-webkit-appearance: button;
+background-color: #000;
+background-image: none;
+color: #fff;
+cursor: pointer;
+font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+font-size: 100%;
+font-weight: 900;
+line-height: 1.5;
+margin: 0;
+-webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+padding: 0;
+text-transform: uppercase;
+}
+
+.btn-17:disabled {
+cursor: default;
+}
+
+.btn-17:-moz-focusring {
+outline: auto;
+}
+
+.btn-17 svg {
+display: block;
+vertical-align: middle;
+}
+
+.btn-17 [hidden] {
+display: none;
+}
+
+.btn-17 {
+border-radius: 99rem;
+border-width: 2px;
+padding: 0.8rem 3rem;
+z-index: 0;
+}
+
+.btn-17,
+.btn-17 .text-container {
+overflow: hidden;
+position: relative;
+}
+
+.btn-17 .text-container {
+display: block;
+mix-blend-mode: difference;
+}
+
+.btn-17 .text {
+display: block;
+position: relative;
+}
+
+.btn-17:hover .text {
+-webkit-animation: move-up-alternate 0.3s forwards;
+animation: move-up-alternate 0.3s forwards;
+}
+
+@-webkit-keyframes move-up-alternate {
+0% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(80%);
+}
+
+51% {
+transform: translateY(-80%);
+}
+
+to {
+transform: translateY(0);
+}
+}
+
+@keyframes move-up-alternate {
+0% {
+transform: translateY(0);
+}
+
+50% {
+transform: translateY(80%);
+}
+
+51% {
+transform: translateY(-80%);
+}
+
+to {
+transform: translateY(0);
+}
+}
+
+.btn-17:after,
+.btn-17:before {
+--skew: 0.2;
+background: #fff;
+content: "";
+display: block;
+height: 102%;
+left: calc(-50% - 50% * var(--skew));
+pointer-events: none;
+position: absolute;
+top: -104%;
+transform: skew(calc(150deg * var(--skew))) translateY(var(--progress, 0));
+transition: transform 0.2s ease;
+width: 100%;
+}
+
+.btn-17:after {
+--progress: 0%;
+left: calc(50% + 50% * var(--skew));
+top: 102%;
+z-index: -1;
+}
+
+.btn-17:hover:before {
+--progress: 100%;
+}
+
+.btn-17:hover:after {
+--progress: -102%;
+}

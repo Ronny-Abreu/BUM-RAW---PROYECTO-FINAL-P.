@@ -1,0 +1,389 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/static/fonts/SORA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Atomic';
+    src: url('/static/fonts/atomic.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #19191a;
+    color: #F1F1F1;
+    font-weight: normal;
+    /* overflow-x: hidden; */
+}
+
+.container {
+    display: flex;
+}
+
+.image-container {
+    max-width: 80%;
+    position: fixed;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100vh;
+    filter: grayscale(10);
+}
+
+.allRight {
+    position: absolute;
+    display: flex;
+}
+
+.righInfo {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    left: 120%;
+    margin-top: 15%;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.textToGradientBellow {
+    font-family: 'Atomic', sans-serif;
+    margin-left: 210px;
+    font-size: 32px;
+    color: #b5cc02;
+}
+
+.h2Title {
+    font-family: 'Atomic', sans-serif;
+    margin-left: 15rem;
+    color: #b5cc02;
+}
+
+.leftInfo {
+    margin-top: 3px;
+}
+
+.medalla-item {
+    display: flex;
+    margin-left: 14rem;
+    margin-bottom: 50px;
+    color: #878787;
+}
+
+.medalla-icon {
+    width: 26px;
+    height: 26px;
+    margin-right: 4px;
+}
+
+.subtitle {
+    font-weight: 600;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+.social-icons {
+    margin-left: 330px;
+    margin-top: -40px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+}
+
+.spanSelectSuscription {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* MENUS */
+
+.plan {
+    margin-left: 190px;
+}
+
+.cont1 {
+    background-color: #2c2d2f;
+    width: 75%;
+    height: 150px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    width: 435px;
+}
+
+.cont2:hover, .cont1:hover {
+    background-color: #252525;
+}
+
+.cont2 {
+    background-color: #2c2d2f;
+    width: 70%;
+    height: 150px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-left: 188px;
+}
+
+.containers {
+    min-width: 99%;
+    max-width: 100%;
+}
+
+.infoPlan {
+    padding: 30px 30px;
+    border: none;
+}
+
+.iconAndText {
+    display: flex;
+    gap: 5px;
+}
+
+.iconPlanTitle {
+    width: 32px;
+    height: 32px;
+}
+
+.titlePlan {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+}
+
+.pPlan {
+    color: #878787;
+}
+
+.pPlan2 {
+    color: #878787;
+}
+
+.pricePlan {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-weight: bold;
+    z-index: 999;
+}
+
+.lineDecoration {
+    position: absolute;
+    bottom: 38px;
+    left: 40%;
+    height: 15px;
+    width: 270px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 1;
+    background-color: #b5cc02;
+}
+
+.lineDecoration2 {
+    position: absolute;
+    bottom: 38px;
+    left: 45%;
+    height: 15px;
+    width: 270px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 0.6;
+    background-color: #b4cc02cb;
+}
+
+.lineDecoration3 {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    height: 15px;
+    width: 270px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 0.3;
+    background-color: #b4cc0297;
+}
+
+.lineDecoration4 {
+    position: absolute;
+    bottom: 18px;
+    left: 60%;
+    height: 125px;
+    width: 310px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 0.1;
+    background-color: #b4cc026b;
+}
+
+.lineDecoration21 {
+    position: absolute;
+    bottom: 38px;
+    left: 40%;
+    height: 15px;
+    width: 270px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 1;
+    background-color: #535358;
+}
+
+.lineDecoration22 {
+    position: absolute;
+    bottom: 38px;
+    left: 45%;
+    height: 15px;
+    width: 270px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 0.6;
+    background-color: #535358;
+}
+
+.lineDecoration23 {
+    position: absolute;
+    bottom: 38px;
+    left: 50%;
+    height: 15px;
+    width: 270px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 0.3;
+    background-color: #535358;
+}
+
+.lineDecoration24 {
+    position: absolute;
+    bottom: 18px;
+    left: 60%;
+    height: 125px;
+    width: 310px;
+    rotate: -55deg;
+    padding-bottom: 4px;
+    opacity: 0.1;
+    background-color: #535358;
+}
+
+.containers:hover {
+    cursor: pointer;
+}
+
+.planInfo {
+    background-color: #232222;
+    border-radius: 8px;
+    width: 440px;
+    margin: 30px 0 40px 180px;
+    padding: 10px 0 15px 15px;
+    display: none;
+}
+
+.pTitle {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    margin: 3px 0 14px 6px;
+}
+
+.parrafo {
+    margin-bottom: 10px;
+    margin: 0 0 10px 6px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #FCFCFC;
+}
+
+.parrafo img {
+    margin-right: 8px;
+}
+
+.nextButton {
+    margin: 20px 0 30px 180px;
+}
+
+#nextButton1 {
+    display: none;
+}
+
+#nextButton2 {
+    display: none;
+}
+
+.nextButton a {
+    text-decoration: none;
+    color: #f1f1f4;
+    background-color: rgb(0 108 250);
+    padding: 10px 100px;
+    border-radius: 6px;
+    font-weight: 600;
+    z-index: 600;
+}
+
+.nextButton a:hover {
+    background-color: rgb(0, 88, 202);
+}
+
+
+/* OPEN MODAL */
+ /* Estilos para el modal */
+.modal {
+    display: none; /* Por defecto el modal está oculto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+    overflow: auto;
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
