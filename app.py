@@ -8,14 +8,19 @@ app = Flask(__name__)
 app.secret_key = 'GodIsGod07'
 
 # Configuración de la base de datos
-db = mysql.connector.connect(
-    host="mysql.railway.internal",  # Usa el valor de MYSQLHOST
-    port=3306,  # El puerto proporcionado (también en MYSQLPORT)
-    user="root",  # El valor de MYSQLUSER
-    password="FFEaUztTHCYcumImFaKsphYSzTefgstp",  # El valor de MYSQLPASSWORD
-    database="railway"  # El valor de MYSQLDATABASE
-)
-cursor = db.cursor()
+try:
+    db = mysql.connector.connect(
+        host="mysql.railway.internal", 
+        port=3306,  
+        user="root",  
+        password="FFEaUztTHCYcumImFaKsphYSzTefgstp",  
+        database="railway"
+    )
+    cursor = db.cursor()
+    print("Conexión a la base de datos exitosa!")
+except mysql.connector.Error as err:
+    print(f"Error al conectar a la base de datos: {err}")
+    exit()  # Salir si hay un error de conexión
 
 
 #DATOS DEL USUARIO ADMINISTRADOR:
