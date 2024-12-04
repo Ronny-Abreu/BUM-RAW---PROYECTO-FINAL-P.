@@ -40,7 +40,7 @@ def pagina_principal():
 @app.route("/chatbot")
 def chatbot():
     if 'usuario' in session:
-        return render_template("https://t.me/BumRawBot")
+        return redirect("https://t.me/BumRawBot")
     else:
         return redirect(url_for("inicio_sesion"))
 
