@@ -20,11 +20,10 @@
     <div class="padre">
         <img src="{{ url_for('static', filename='img/bicepss.png') }}" alt="Bíceps">
     </div>
-
+    
     <div class="container">
         <div class="forms-container">
             <div class="signin-signup">
-
                 <!-- Formulario de inicio de sesión -->
                 <form action="/inicioSesion" method="POST" class="sign-in-form">
                     <h2 class="title">Iniciar Sesión</h2>
@@ -37,8 +36,8 @@
                         <input type="password" name="contrasena" autocomplete="off" placeholder="Contraseña" required />
                     </div>
                     <button class="button">Entrar</button>
-    
-                    <!-- Flash messages (colocado encima del enlace) -->
+                    
+                    <!-- Flash messages -->
                     {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
                         <ul>
@@ -48,9 +47,8 @@
                         </ul>
                     {% endif %}
                 {% endwith %}
-                
                     
-    
+                    
                     <p class="social-text">
                         <a href="{{ url_for('recuperar_contrasena') }}">¿Has olvidado tu contraseña?</a><br> <br>
                         <span style="color: white;">¿No tienes cuenta? <a href="{{ url_for('registrarse') }}">Regístrate .</a></span>
@@ -60,9 +58,6 @@
         </div>
     </div>
     
-    
-    
-
     <script src="{{ url_for('static', filename='js/registrarse.js') }}"></script>
 
 </body>
