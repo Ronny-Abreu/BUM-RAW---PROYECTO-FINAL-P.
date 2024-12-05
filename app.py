@@ -200,12 +200,5 @@ def planes_inicio():
     else:
         return redirect(url_for("inicio_sesion"))
 
-
-# Página de destino después de iniciar sesión
-@app.route("/paginainformativa")
-def paginainformativa():
-    return render_template("paginainformativa.html")
-
-
 if __name__ == "__main__":
     app.run(debug=True)
