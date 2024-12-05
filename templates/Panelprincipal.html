@@ -71,6 +71,7 @@
 
                 <!-- Botón Entrar -->
                 {% if usuario %}
+
                 <!-- Si el usuario ha iniciado sesión, redirige a la página planesInicio -->
                 <a href="{{ url_for('planes_inicio') }}" target="_blank">
                     <button class="btn-17">
@@ -93,7 +94,7 @@
 
     </main>
     <script>
-        // Comprueba si el usuario ha iniciado sesión cada 5 segundos y actualiza la página si es necesario
+        // Comprueba si el usuario ha iniciado sesión cada 5 segundos y actualiza la página
         setInterval(() => {
             fetch('{{ url_for("pagina_principal") }}')
                 .then(response => response.text())
@@ -104,7 +105,7 @@
                     const actualUsuario = document.querySelector('.lable').textContent.trim();
     
                     if (usuarioElemento !== actualUsuario) {
-                        location.reload(); // Recarga la página si el usuario ha cambiado
+                        location.reload(); // Recarga la página si el usuario ha inciado sesion
                     }
                 });
         }, 5000);
