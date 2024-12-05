@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
+    <title>BUM RAW</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Panelprincipal.css') }}">
     <link rel="icon" href="/static/img/cbumlogoNike.png" type="image/x-icon">
 </head>
@@ -14,7 +14,6 @@
     <nav class="navbar">
         <img src="/static/img/cbumlogoNike.png" alt="Logo" class="logo-img">
         <ul>
-            <li><a href="/">Inicio</a></li>
             <li><a href="/planesInicio" target="_blank">Planes</a></li>
             {% if usuario %}
             <li><a href="https://t.me/BumRawBot" target="_blank">ChatBot</a></li>
@@ -24,6 +23,7 @@
             {% if session.get('es_admin') %}
             <li><a href="{{ url_for('reporte') }}" target="_blank">Reporte</a></li>
             {% endif %}
+            <li><a href="{{ url_for('terms_politica') }}" target="_blank">Terms & Política</a></li>
         </ul>
         
         
