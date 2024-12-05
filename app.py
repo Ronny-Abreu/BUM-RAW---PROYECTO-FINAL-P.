@@ -200,5 +200,11 @@ def planes_inicio():
     else:
         return redirect(url_for("inicio_sesion"))
 
+@app.route("/terms-politica")
+def terms_politica():
+    pdf_path = "static/docs/Términos y Políticas de Uso de BUM RAW.pdf"
+    return redirect(pdf_path)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
