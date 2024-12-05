@@ -23,7 +23,12 @@
             {% if session.get('es_admin') %}
             <li><a href="{{ url_for('reporte') }}" target="_blank">Reporte</a></li>
             {% endif %}
-            <li><a href="{{ url_for('terms_politica') }}" target="_blank">Terms & Política</a></li>
+            <li>
+                {% if not session.get('es_admin') %}
+                    <a href="{{ url_for('terms_politica') }}" target="_blank">Terms & Política</a>
+                {% endif %}
+            </li>
+            
         </ul>
         
         
