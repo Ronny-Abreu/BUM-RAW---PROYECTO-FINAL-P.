@@ -2,25 +2,21 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 
-#creamos el servidor flask
+
 app = Flask(__name__)
+
 #Clave secreta para evitar que el usuario pueda modoficar los datos de la sesion
 app.secret_key = 'GodIsGod07'
 
 # Configuración de la base de datos
-try:
-    db = mysql.connector.connect(
-        host="mysql.railway.internal", 
-        port=3306,  
-        user="root",  
-        password="FFEaUztTHCYcumImFaKsphYSzTefgstp",  
-        database="railway"
-    )
-    cursor = db.cursor()
-    print("Conexión a la base de datos exitosa!")
-except mysql.connector.Error as err:
-    print(f"Error al conectar a la base de datos: {err}")
-    exit()  # Salir si hay un error de conexión
+db = mysql.connector.connect(
+    host="localhost",         # Servidor
+    port=3308,                # Puerto
+    user="root",              # Usuario
+    password="",              # Contraseña
+    database="sistema_usuarios"  # Base de datos
+)
+cursor = db.cursor()
 
 
 #DATOS DEL USUARIO ADMINISTRADOR:
@@ -34,13 +30,15 @@ except mysql.connector.Error as err:
 def pagina_principal():
     usuario = session.get('usuario')  # Obtiene el usuario de la sesión
     
-    #Si la cuenta existe, inica sesion y lo redirige a la pagina principal y el nombre del usuario con el que inició sesion
+    #Si la cuenta existe, inica sesion y lo redirige a la pagina principal y aparece con el nombre del usuario con el que inició sesion
     return render_template("PanelPrincipal.html", usuario=usuario)
 
+
+#Ruta para mandar al chatbot de telegram
 @app.route("/chatbot")
 def chatbot():
     if 'usuario' in session:
-        return redirect("https://t.me/BumRawBot")
+        return render_template("https://t.me/BumRawBot")
     else:
         return redirect(url_for("inicio_sesion"))
 
@@ -53,7 +51,9 @@ def inicio_sesion():
         correo = request.form["correo"].strip()
         contrasena = request.form["contrasena"].strip()
         
-        # Consultar usuario
+        #query para verificar si el usuario que inicio sesión es admin o no.
+        # admin = 1
+        # user Basico = 0
         query = "SELECT nombre, contrasena, es_admin FROM usuarios WHERE correo = %s"
         cursor.execute(query, (correo,))
         usuario = cursor.fetchone()
@@ -66,7 +66,8 @@ def inicio_sesion():
         if check_password_hash(usuario[1], contrasena):
             # Almacena la sesión del usuario
             session['usuario'] = usuario[0]
-            session['es_admin'] = usuario[2]  # Guardar el valor es_admin
+            session['es_admin'] = usuario[2] #si es admin entra con permiso para ver el apartado de reportes
+            #Este es un script para poder cerrar la pagina web si ya iniciaste sesion correctamente y carga la pagina principal.
             return """
                 <html>
                 <body>
@@ -86,45 +87,43 @@ def inicio_sesion():
                 </html>
             """
         else:
+            #Si los datos al iniciar sesion son incorrectos lanza este mensaje
             flash("Usuario o contraseña incorrectos.", "danger")
     
     return render_template("IniciarSesion.html")
 
 
+#Ruta y funcion para que en el navbar aparezca el link del Reporte solo si el usuario es administrador
 @app.route("/reporte", methods=["GET", "POST"])
 def reporte():
     if not session.get('es_admin'):
         flash("No tienes permisos para acceder a esta página.", "danger")
         return redirect(url_for('pagina_principal'))
 
-    # Obtener el valor del input (campo de búsqueda 'correo')
-    correo_busqueda = request.args.get('correo')  # Captura lo que se escribe en el campo de búsqueda
+    # Captura lo que se escribe en el campo de búsqueda
+    correo_busqueda = request.args.get('correo')  
     
-    # Si el input está vacío, mostrar todos los usuarios
+    #Buscador del input
     if correo_busqueda:
-        # Si hay un valor en el campo de búsqueda, buscar coincidencias parciales en los correos
         query = "SELECT nombre, correo FROM usuarios WHERE correo LIKE %s"
-        cursor.execute(query, ('%' + correo_busqueda + '%',))  # Buscar todos los usuarios cuyo correo contenga el texto ingresado
+        cursor.execute(query, ('%' + correo_busqueda + '%',))  # Busca todos los nombre parecidos al ingresado
     else:
-        # Si no hay valor en el campo de búsqueda (input vacío), mostrar todos los usuarios
+        # Muestra todos los usuarios registrados
         query = "SELECT nombre, correo FROM usuarios"
         cursor.execute(query)
     
     usuarios = cursor.fetchall()  # Obtiene todos los resultados según la búsqueda
 
-    # Asegurarse de que la base de datos se haya actualizado correctamente
+    #commit para que la base de datos se actualice cada vez que un usuario crea una cuenta
     db.commit()
 
-    # Crear la respuesta para evitar caché del navegador
+    # Almacena Caché en el navegador
     response = make_response(render_template("reporte.html", usuarios=usuarios))
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "0"
 
     return response
-
-
-
 
 
 # Ruta para la página de recuperación de contraseña
@@ -140,7 +139,6 @@ def recuperar_contrasena():
         usuario = cursor.fetchone()
 
         if usuario:
-            # Si el correo existe, actualizar la contraseña
             hash_contrasena = generate_password_hash(nueva_contrasena)
             query_update = "UPDATE usuarios SET contrasena = %s WHERE correo = %s"
             cursor.execute(query_update, (hash_contrasena, correo))
@@ -153,10 +151,12 @@ def recuperar_contrasena():
     return render_template("recuperarContrasena.html")
 
 
+#Ruta y funcion para cuando el usuario cierre sesion
 @app.route("/cerrarSesion")
 def cerrar_sesion():
-    session.pop('usuario', None)  # Eliminar usuario de la sesión
-    session.pop('es_admin', None)  # Eliminar es_admin de la sesión
+    #Elimina el usuario de la sesion
+    session.pop('usuario', None)
+    session.pop('es_admin', None)
     flash("Has cerrado sesión exitosamente.", "success")
     return redirect(url_for("pagina_principal"))
 
@@ -168,6 +168,7 @@ def registrarse():
     if request.method == "POST":
         nombre = request.form["nombre"].strip()
         correo = request.form["correo"].strip()
+        #Genera la contraseña hash en la base de datos
         contrasena = generate_password_hash(request.form["contrasena"].strip())
         
         # Comprobar si el correo ya existe en la base de datos
@@ -191,7 +192,7 @@ def registrarse():
     
     return render_template("registrarse.html")
 
-
+#Ruta y funcion para ver los planes
 @app.route("/planesInicio")
 def planes_inicio():
     if 'usuario' in session:
@@ -205,5 +206,6 @@ def planes_inicio():
 def paginainformativa():
     return render_template("paginainformativa.html")
 
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    app.run(debug=True)
